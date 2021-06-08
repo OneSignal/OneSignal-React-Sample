@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
+  window.OneSignal = window.OneSignal || [];
+  const OneSignal = window.OneSignal;
+
+  useEffect(() => {
+    OneSignal.push(() => {
+      OneSignal.init(
+        {
+          appId: "5a6f35cf-46b7-4d06-bd3e-378af082872f"
+        },
+
+      )
+    });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello From OneSignal
     </div>
   );
 }
