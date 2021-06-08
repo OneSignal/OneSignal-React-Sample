@@ -12,6 +12,22 @@ You will also see any lint errors in the console.
 
 ## Advanced OneSignal Setup With ReactJS
 
+Follow [this instructions](https://documentation.onesignal.com/docs/web-push-typical-setup) to get stated with OneSignal.
+
+If you want the ability to use OneSignal across your entire ReactJS app, complete these advanced push notification setup steps after completing the quick push notification setup. You can reference the [quick-setup](https://github.com/OneSignal/OneSignal-React-Sample/tree/quick-setup) branch for help.
+
+Inside of your **index.html** file, remove the following code:
+```javascript
+ <script>
+   window.OneSignal = window.OneSignal || [];
+   OneSignal.push(function() {
+     OneSignal.init({
+       appId: "YOUR-APP-ID",
+     });
+   });
+ </script
+```
+
 Inside of your **App.js** file, you will enter the following lines of code:
 
 ```javascript
