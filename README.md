@@ -10,7 +10,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-## Advanced OneSignal setup with ReactJS
+## Advanced OneSignal Setup With ReactJS
 
 Inside of your **App.js** file, you will enter the following lines of code:
 
@@ -34,4 +34,4 @@ useEffect(() => {
  }, []);
  ```
 
-Now, you can keep expanding your code to make use of different features of the OneSignal SDK across your ReactJS app by passing the `OneSignal` variable to different components. You can also use the custom code setup to modify the configurations of your prompt inside of your ReactJS application without using the OneSignal dashboard. To learn more about the Web Push SDK visit our web push SDK documentation
+Now, you can keep expanding your code to make use of different features of the OneSignal SDK across your ReactJS app by passing the `OneSignal` variable to different components. You can also use the [custom code setup](https://documentation.onesignal.com/docs/web-push-custom-code-setup) to modify the configurations of your prompt inside of your ReactJS application without using the OneSignal dashboard. To learn more about the Web Push SDK visit our web push [SDK documentation](https://documentation.onesignal.com/docs/web-push-sdk).
