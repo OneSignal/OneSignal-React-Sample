@@ -10,8 +10,7 @@ function App() {
       OneSignal.init(
         {
           appId: "5a6f35cf-46b7-4d06-bd3e-378af082872f"
-        },
-
+        }
       )
     });
   }, []);

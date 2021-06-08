@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# OneSignal ReactJS Sample App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `yarn start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `yarn test`
+## Advanced OneSignal setup with ReactJS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inside of your **App.js** file, you will enter the following lines of code:
 
-### `yarn build`
+```javascript
+window.OneSignal = window.OneSignal || [];
+const OneSignal = window.OneSignal;
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The code above will make the `window` object aware of the `OneSignal` property. This will allow you to have access to the OneSignal SDK properties after the SDK has loaded into your web application.
+In the same file we will create a `useEffect`. This hook will have the initialization code needed to trigger OneSignal. Remember to add the dependency array `[]`  to your `useEffect` hook. The `init()` method from OneSignal can only be called once and the dependency array will help us to avoid that the useEffect gets triggered multiple times firing the `init()` method.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+useEffect(() => {
+   OneSignal.push(() => {
+     OneSignal.init(
+       {
+         appId: "YOUR-APP-ID"
+       },
+     )
+   });
+ }, []);
+ ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now, you can keep expanding your code to make use of different features of the OneSignal SDK across your ReactJS app by passing the `OneSignal` variable to different components. You can also use the custom code setup to modify the configurations of your prompt inside of your ReactJS application without using the OneSignal dashboard. To learn more about the Web Push SDK visit our web push SDK documentation
