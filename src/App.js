@@ -13,7 +13,7 @@ function App() {
         }
       )
     });
-  }, []);
+  }, [OneSignal]);
 
   return (
     <div className="App">
