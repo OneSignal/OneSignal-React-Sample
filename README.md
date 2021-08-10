@@ -47,6 +47,10 @@ useEffect(() => {
        },
      )
    });
+
+   return () => {
+      window.OneSignal = undefined;
+   };
  }, []);
  ```
 
