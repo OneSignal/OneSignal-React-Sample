@@ -47,11 +47,7 @@ useEffect(() => {
        },
      )
    });
-
-   return () => {
-      window.OneSignal = undefined;
-   };
- }, []);
+ }, [OneSignal]);
  ```
 
 Now, you can keep expanding your code to make use of different features of the OneSignal SDK across your ReactJS app by passing the `OneSignal` variable to different components. You can also use the [custom code setup](https://documentation.onesignal.com/docs/web-push-custom-code-setup) to modify the configurations of your prompt inside of your ReactJS application without using the OneSignal dashboard. To learn more about the Web Push SDK visit our web push [SDK documentation](https://documentation.onesignal.com/docs/web-push-sdk).
