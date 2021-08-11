@@ -25,7 +25,7 @@ Inside of your **index.html** file, remove the following code:
        appId: "YOUR-APP-ID",
      });
    });
- </script
+ </script>
 ```
 
 Inside of your **App.js** file, you will enter the following lines of code:
